@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of webman.
  *
@@ -17,9 +18,9 @@
  */
 return [
     // Default language
-    'locale' => 'zh_CN',
+    'locale' => getenv('APP_LOCALE') ?: 'zh_CN',
     // Fallback language
-    'fallback_locale' => ['zh_CN', 'en'],
+    'fallback_locale' => getenv('APP_FALLBACK_LOCALE') ?: 'en',
     // Folder where language files are stored
     'path' => base_path() . '/resource/translations',
 ];

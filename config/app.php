@@ -18,8 +18,8 @@ use Webman\Exception\BusinessException;
 use Tinywan\Jwt\Exception\JwtTokenException;
 
 return [
-    'debug' => true,
-    'error_reporting' => E_ALL,
+    'debug' => getenv('APP_DEBUG') ?: false,
+    'error_reporting' => getenv('ERROR_REPORTING') ?: E_ALL,
     'default_timezone' => 'Asia/Shanghai',
     'request_class' => Request::class,
     'public_path' => base_path() . DIRECTORY_SEPARATOR . 'public',

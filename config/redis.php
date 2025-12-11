@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of webman.
  *
@@ -14,10 +15,10 @@
 
 return [
     'default' => [
-        'password' => '',
-        'host' => '127.0.0.1',
-        'port' => 6379,
-        'database' => 0,
+        'password' => getenv('REDIS_PASSWORD') ?: null,
+        'host' => getenv('REDIS_HOST') ?: '127.0.0.1',
+        'port' => getenv('REDIS_PORT') ?: 6379,
+        'database' => getenv('REDIS_DB') ?: 0,
         'pool' => [
             'max_connections' => 5,
             'min_connections' => 1,
