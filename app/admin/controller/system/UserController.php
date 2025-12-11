@@ -17,7 +17,7 @@ class UserController extends ApiController
     private string $validateClass = UserValidate::class;
     public function index(Request $request)
     {
-        return $this->success($this->userService->paginate(), $request->all());
+        return $this->success($this->userService->paginate($request->all()));
     }
 
     public function store(Request $request)

@@ -10,11 +10,11 @@ use think\exception\ValidateException;
 class UserService extends BaseService
 {
 
-    public function paginate(array $filters = []): Paginator
+    public function paginate(array $filters = []): array
     {
         $query = User::query();
 
-        return $query->simplePaginate();
+        return $query->customPaginate();
     }
 
     public function show(mixed $id): User

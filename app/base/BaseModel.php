@@ -7,7 +7,7 @@ use DateTimeInterface;
 use app\base\BaseBuilder;
 
 /**
- * @method static BaseBuilder mixed query($method, $parameters)
+ * @method static BaseBuilder query($method, $parameters)
  */
 class BaseModel extends Model
 {

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace app\base;
 
 use Illuminate\Database\Eloquent\Builder;
@@ -14,10 +16,11 @@ class BaseBuilder extends Builder
      * @param  string  $pageName
      * @param  int|null  $page
      * @param  \Closure|int|null  $total
-     * @return \Illuminate\Pagination\LengthAwarePaginator
+     * @return array
      *
      * @throws \InvalidArgumentException
-     */    public function customPaginate($perPage = 15, $page = null, $columns = ['*'], $pageName = 'page', $total = null)
+     */
+    public function customPaginate($perPage = 15, $page = null, $columns = ['*'], $pageName = 'page', $total = null)
     {
         $paginator = $this->paginate($perPage, $columns, $pageName, $page, $total);
 
