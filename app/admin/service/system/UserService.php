@@ -4,7 +4,6 @@ namespace app\admin\service\system;
 
 use app\base\BaseService;
 use app\admin\model\system\User;
-use Illuminate\Pagination\Paginator;
 use think\exception\ValidateException;
 
 class UserService extends BaseService

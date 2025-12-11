@@ -7,7 +7,6 @@ use Tinywan\Jwt\JwtToken;
 use app\admin\model\system\User;
 use Webman\Captcha\CaptchaBuilder;
 use think\exception\ValidateException;
-use support\exception\BusinessException;
 
 class AuthService
 {
