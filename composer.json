@@ -41,7 +41,8 @@
     "tinywan/jwt": "^1.13",
     "webman/captcha": "^1.0",
     "php-di/php-di": "^7.0",
-    "topthink/think-validate": "^3.0"
+    "topthink/think-validate": "^3.0",
+    "robmorgan/phinx": "^0.16.10"
   },
   "suggest": {
     "ext-event": "For better performance. "
