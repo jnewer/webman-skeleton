@@ -10,9 +10,29 @@ use think\exception\ValidateException;
 class UserService extends BaseService
 {
 
-    public function paginate(array $filters = []): array
+    public function paginate(array $params = []): array
     {
         $query = User::query();
+
+        $query->when(!empty($params['username']), function ($query) use ($params) {
+            $query->where('username', 'like', '%' . $params['username'] . '%');
+        });
+
+        $query->when(!empty($params['nickname']), function ($query) use ($params) {
+            $query->where('nickname', 'like', '%' . $params['nickname'] . '%');
+        });
+
+        $query->when(!empty($params['mobile']), function ($query) use ($params) {
+            $query->where('mobile', 'like', '%' . $params['mobile'] . '%');
+        });
+
+        $query->when(!empty($params['email']), function ($query) use ($params) {
+            $query->where('email', 'like', '%' . $params['email'] . '%');
+        });
+
+        $query->when(isset($params['status']) && $params['status'] !== '', function ($query) use ($params) {
+            $query->where('status', $params['status']);
+        });
 
         return $query->customPaginate();
     }
